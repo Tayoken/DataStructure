@@ -15,21 +15,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Graph\BTNode.h">
+    <ClInclude Include="BTNode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Graph\TBTNode.h">
+    <ClInclude Include="C.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Graph\BinaryTreeTraversal.cpp">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Graph\C.h">
+    <ClInclude Include="TBTNode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Graph\ThreadBinaryTree.cpp">
+    <ClCompile Include="BinaryTreeTraversal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ThreadBinaryTree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
