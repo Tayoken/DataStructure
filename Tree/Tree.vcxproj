@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{443b6ef4-7038-4f16-bd05-7ceef63275b1}</ProjectGuid>
-    <RootNamespace>Graph</RootNamespace>
+    <ProjectGuid>{017f96a4-91e2-4f75-bbff-215dbd9c274f}</ProjectGuid>
+    <RootNamespace>Tree</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,13 +139,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ShortestPathAlgorithm.cpp" />
-    <ClCompile Include="TopSortAlogrithm.cpp" />
-    <ClCompile Include="GraphTraversalAlogrithm.cpp" />
+    <ClInclude Include="..\Graph\BTNode.h" />
+    <ClInclude Include="..\Graph\C.h" />
+    <ClInclude Include="..\Graph\TBTNode.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AGraph.h" />
-    <ClInclude Include="MGraph.h" />
+    <ClInclude Include="..\Graph\BinaryTreeTraversal.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Graph\ThreadBinaryTree.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
