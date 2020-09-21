@@ -21,7 +21,7 @@ int strassign(Str& str, char* ch)
 	}
 	else
 	{
-		str.ch = (char*)malloc(sizeof(char) * (len + 1));                                   //取len+1是为了多分配一个空间存放'\0'字符
+		str.ch = (char*)malloc(sizeof(char)*(len + 1));                                   //取len+1是为了多分配一个空间存放'\0'字符
 		if (str.ch == NULL)
 			return 0;
 		else
