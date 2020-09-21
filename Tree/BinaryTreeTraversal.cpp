@@ -105,7 +105,7 @@ void postorderNonrecursion(BTNode* root)
 		BTNode* stack1[maxSize]; int top1 = -1;
 		BTNode* stack2[maxSize]; int top2 = -1;
 		BTNode* p = NULL;
-		stack1[top1++] = p;
+		stack1[++top1] = root;
 		while (top1 != -1)
 		{
 			p = stack1[top1--];

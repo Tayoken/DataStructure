@@ -90,7 +90,7 @@ void Floyd(MGraph g, int Path[][maxSize], int A[][maxSize])
 }
 
 /*输出从u到v的最短路径上的顶点序列*/
-void printFloydPath(int u, int v, int path[][maxSize], int A[][maxSize)
+void printFloydPath(int u, int v, int path[][maxSize], int A[][maxSize])
 {
 	if (A[u][v] == INF)
 	{

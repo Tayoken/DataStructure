@@ -141,6 +141,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ShortestPathAlgorithm.cpp" />
+    <ClCompile Include="Source.cpp" />
     <ClCompile Include="TopSortAlogrithm.cpp" />
     <ClCompile Include="GraphTraversalAlogrithm.cpp" />
   </ItemGroup>

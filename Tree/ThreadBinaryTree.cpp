@@ -127,3 +127,27 @@ void preorder(TBTNode* root)
 		}
 	}
 }
+
+/*
+* 后续线索二叉树线索化
+* 和中序线索化极为相似，最大的区别就是把链接线索的代码放到了两递归入口的后面，符合后序遍历的框架
+*/
+void postThread(TBTNode* p, TBTNode*& pre)
+{
+	if (p != NULL)
+	{
+		postThread(p->lchild, pre);                             //递归，左子树线索化
+		postThread(p->rchild, pre);                             //递归，右子树线索化
+		if (p->lchild == NULL)
+		{
+			p->lchild = pre;                                    //简历当前结点的前驱线索
+			p->ltag = 1;
+		}
+		if (pre!=NULL&&pre->rchild==NULL)
+		{
+			pre->rchild = p;                                    //建立前驱结点的后继线索
+			pre->rtag = 1;
+		}
+		pre = p;
+	}
+}
