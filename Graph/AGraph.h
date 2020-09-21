@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #define maxSize 100
 
 typedef struct ArcNode {
@@ -9,7 +9,7 @@ typedef struct ArcNode {
 
 typedef struct VNode{
 	char data;
-	int count;//Í³¼Æ½áµãµÄÈë¶È£¬ÍØÆËÅÅĞòÓÃµ½
+	int count;//ç»Ÿè®¡ç»“ç‚¹çš„å…¥åº¦ï¼Œæ‹“æ‰‘æ’åºç”¨åˆ°
 	ArcNode* firstarc;
 }VNode;
 

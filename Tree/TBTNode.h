@@ -1,11 +1,11 @@
-#pragma once
+ï»¿#pragma once
 /*
-* ÏßË÷¶ş²æÊ÷½áµã
+* çº¿ç´¢äºŒå‰æ ‘ç»“ç‚¹
 */
 typedef struct TBTNode
 {
 	char data;
-	int ltag, rtag;									//ÏßË÷±ê¼Ç
+	int ltag, rtag;									//çº¿ç´¢æ ‡è®°
 	struct TBTNode* lchild;
 	struct TBTNode* rchild;
 };

@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include "BTNode.h"
 #include "C.h"
 
@@ -39,24 +39,24 @@ void postorder(BTNode* p)
 
 
 /*
-* ÏÂÃæÈı¸öËã·¨ÊÇ¶ş²æÊ÷±éÀúËã·¨µÄ¸Ä½ø£¬½«µİ¹é¸ÄÎªÑ­»·
+* ä¸‹é¢ä¸‰ä¸ªç®—æ³•æ˜¯äºŒå‰æ ‘éå†ç®—æ³•çš„æ”¹è¿›ï¼Œå°†é€’å½’æ”¹ä¸ºå¾ªç¯
 */
 
 void preoderNonrecursion(BTNode* root)
 {
 	if (root != NULL)
 	{
-		BTNode* stack[maxSize];									//¶¨ÒåÒ»¸öÕ»
-		int top = -1;											//³õÊ¼»¯Õ»
+		BTNode* stack[maxSize];									//å®šä¹‰ä¸€ä¸ªæ ˆ
+		int top = -1;											//åˆå§‹åŒ–æ ˆ
 		BTNode* p;		   
-		stack[++top] = root;                                    //¸ù½ÚµãÈëÕ»
-		while (top != -1)                                       //Õ»¿ÕÑ­»·ÍË³ö
+		stack[++top] = root;                                    //æ ¹èŠ‚ç‚¹å…¥æ ˆ
+		while (top != -1)                                       //æ ˆç©ºå¾ªç¯é€€å‡º
 		{
-			p = stack[top--];                                   //³öÕ»²¢Êä³öÕ»¶¥½áµã
-			Visit(p);                                           //·ÃÎÊp
-			if (p->rchild != NULL)                              //Õ»¶¥½áµãµÄÓÒº¢×Ó´æÔÚ ÓÒº¢×ÓÈëÕ»
+			p = stack[top--];                                   //å‡ºæ ˆå¹¶è¾“å‡ºæ ˆé¡¶ç»“ç‚¹
+			Visit(p);                                           //è®¿é—®p
+			if (p->rchild != NULL)                              //æ ˆé¡¶ç»“ç‚¹çš„å³å­©å­å­˜åœ¨ å³å­©å­å…¥æ ˆ
 				stack[++top] = p->rchild;
-			if (p->lchild != NULL)                              //Õ»¶¥½áµãµÄ×óº¢×Ó´æÔÚ ×óº¢×ÓÈëÕ»
+			if (p->lchild != NULL)                              //æ ˆé¡¶ç»“ç‚¹çš„å·¦å­©å­å­˜åœ¨ å·¦å­©å­å…¥æ ˆ
 				stack[++top] = p->lchild;
 		}
 	}
@@ -72,21 +72,21 @@ void inorderNonrecursion(BTNode* root)
 		BTNode* p;
 		p = root;
 		/*
-		* ÏÂÃæÕâ¸öÑ­»·Íê³ÉÖĞĞò±éÀú£¬×¢Òâ³öÕ»Ê±³öÏÖÕ»¿Õ×´Ì¬´ËÊ±±éÀú¿ÉÄÜÃ»ÓĞ½áÊø£¬ÒòÎª¸ù½ÚµãµÄÓÒ×ÓÊ÷»¹Ã»ÓĞ±éÀú
+		* ä¸‹é¢è¿™ä¸ªå¾ªç¯å®Œæˆä¸­åºéå†ï¼Œæ³¨æ„å‡ºæ ˆæ—¶å‡ºç°æ ˆç©ºçŠ¶æ€æ­¤æ—¶éå†å¯èƒ½æ²¡æœ‰ç»“æŸï¼Œå› ä¸ºæ ¹èŠ‚ç‚¹çš„å³å­æ ‘è¿˜æ²¡æœ‰éå†
 		*/
 		while (top != -1 && p != NULL)
 		{
-			while (p != NULL)                                   //×óº¢×Ó´æÔÚÔò×óº¢×ÓÈëÕ»
+			while (p != NULL)                                   //å·¦å­©å­å­˜åœ¨åˆ™å·¦å­©å­å…¥æ ˆ
 			{
 				stack[++top] = p;
 				p = p->lchild;
 
 			}
-			if (top != -1)                                      //ÔÚÕ»²»¿ÕµÄÇé¿öÏÂ³öÕ»²¢Êä³öÕ»¶¥½áµã
+			if (top != -1)                                      //åœ¨æ ˆä¸ç©ºçš„æƒ…å†µä¸‹å‡ºæ ˆå¹¶è¾“å‡ºæ ˆé¡¶ç»“ç‚¹
 			{
 				p = stack[top--];
-				Visit(p);                                       //·ÃÎÊp
-				p = p->rchild;                                  //pÖ¸ÏòÓÒ×ÓÊ÷£¬ÏÂÒ»´ÎÑ­»·¿ªÊ¼ÓÒ×ÓÊ÷µÄ±éÀú
+				Visit(p);                                       //è®¿é—®p
+				p = p->rchild;                                  //pæŒ‡å‘å³å­æ ‘ï¼Œä¸‹ä¸€æ¬¡å¾ªç¯å¼€å§‹å³å­æ ‘çš„éå†
 			}
 		}
 	}
@@ -95,13 +95,13 @@ void inorderNonrecursion(BTNode* root)
 
 
 /*
-* ÄæºóĞò±éÀúĞòÁĞÖ»²»¹ıÊÇÏÈĞò±éÀú¹ı³ÌÖĞ¶Ô×óÓÒ×ÓÊ÷±éÀúË³Ğò½»»»ËùµÃµ½µÄ½á¹û
+* é€†ååºéå†åºåˆ—åªä¸è¿‡æ˜¯å…ˆåºéå†è¿‡ç¨‹ä¸­å¯¹å·¦å³å­æ ‘éå†é¡ºåºäº¤æ¢æ‰€å¾—åˆ°çš„ç»“æœ
 */
 void postorderNonrecursion(BTNode* root)
 {
 	if (root != NULL)
 	{
-		/*¶¨ÒåÁ½¸öÕ»*/
+		/*å®šä¹‰ä¸¤ä¸ªæ ˆ*/
 		BTNode* stack1[maxSize]; int top1 = -1;
 		BTNode* stack2[maxSize]; int top2 = -1;
 		BTNode* p = NULL;
@@ -110,7 +110,7 @@ void postorderNonrecursion(BTNode* root)
 		{
 			p = stack1[top1--];
 			stack2[++top2] = p;
-			/*×¢ÒâÏÂÃæÁ½¸öifÓï¾äºÍÏÈĞò±éÀúµÄÇø±ğ£¬ ×óÓÒ×ÓÊ÷µÄÈëÕ»Ë³ĞòÊÇÏà·´µÄ*/
+			/*æ³¨æ„ä¸‹é¢ä¸¤ä¸ªifè¯­å¥å’Œå…ˆåºéå†çš„åŒºåˆ«ï¼Œ å·¦å³å­æ ‘çš„å…¥æ ˆé¡ºåºæ˜¯ç›¸åçš„*/
 			if (p->lchild != NULL)
 				stack1[++top1] = p->lchild;
 			if (p->rchild != NULL)
@@ -118,7 +118,7 @@ void postorderNonrecursion(BTNode* root)
 		}
 		while (top2 != -1)
 		{
-			/*³öÕ»Ë³ĞòÎªºóĞø±éÀúĞòÁĞ*/
+			/*å‡ºæ ˆé¡ºåºä¸ºåç»­éå†åºåˆ—*/
 			p = stack2[top2--];
 			Visit(p);
 		}

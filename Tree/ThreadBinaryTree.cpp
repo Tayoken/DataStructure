@@ -1,88 +1,88 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include "C.h"
 #include "TBTNode.h"
 
-/**ÖÐÐòÏßË÷»¯
-* ÏßË÷»¯·ÖÎö£ºÐèÒªÖÐÐò±éÀúµÄ¿ò¼Ü£¬ÕâÀï²ÉÓÃµÝ¹éµÄÐÎÊÆ£¬ÔÚ±éÀúµÄ¹ý³ÌÖÐÁ¬ÉÏºÏÊÊµÄÏßË÷¼´¿É
-* ÏßË÷»¯¹æÔò£º×óÏßË÷Ö¸ÕëÖ¸Ïòµ±Ç°½áµãÔÚÖÐÐò±éÀúÐòÁÐÖÐµÄÇ°Çý½áµã£¬ÓÒÏßË÷Ö¸ÕëÖ¸Ïòºó¼Ì½áµã¡£
-* Òò´ËÐèÒªÒ»¸öÖ¸ÕëpÖ¸Ïòµ±Ç°½áµã£¬preÖ¸ÏòpµÄÇ°Çý½áµã£¬pµÄ×óÏßË÷Èç¹û´æÔÚÔòÈÃÆäÖ¸Ïòpre£¬ preµÄÓÒÏßË÷Èç¹û´æÔÚÔòÈÃÆäÖ¸Ïòp£¬ÒòÎªpÊÇpreµÄºó¼Ì½áµã£¬ÕâÑù¾ÍÍê³ÉÁËÒ»¶ÔÏßË÷µÄÁ¬½Ó
-* ±£³ÖpreÊ¼ÖÕÖ¸ÏòpµÄÇ°Çý½áµãµÄ¹ý³Ì£ºµ±p½«ÒªÀë¿ªÒ»¸ö·ÃÎÊ¹ýµÄ½áµãÊ±£¬preÖ¸Ïòp£¬µ±pÀ´µ½Ò»¸öÐÂµÄ½áµãÊ±£¬preÖ¸ÏòµÄ¾ÍÊÇ´ËÊ±µÄpµÄÇ°Çý½áµã
+/**ä¸­åºçº¿ç´¢åŒ–
+* çº¿ç´¢åŒ–åˆ†æžï¼šéœ€è¦ä¸­åºéåŽ†çš„æ¡†æž¶ï¼Œè¿™é‡Œé‡‡ç”¨é€’å½’çš„å½¢åŠ¿ï¼Œåœ¨éåŽ†çš„è¿‡ç¨‹ä¸­è¿žä¸Šåˆé€‚çš„çº¿ç´¢å³å¯
+* çº¿ç´¢åŒ–è§„åˆ™ï¼šå·¦çº¿ç´¢æŒ‡é’ˆæŒ‡å‘å½“å‰ç»“ç‚¹åœ¨ä¸­åºéåŽ†åºåˆ—ä¸­çš„å‰é©±ç»“ç‚¹ï¼Œå³çº¿ç´¢æŒ‡é’ˆæŒ‡å‘åŽç»§ç»“ç‚¹ã€‚
+* å› æ­¤éœ€è¦ä¸€ä¸ªæŒ‡é’ˆpæŒ‡å‘å½“å‰ç»“ç‚¹ï¼ŒpreæŒ‡å‘pçš„å‰é©±ç»“ç‚¹ï¼Œpçš„å·¦çº¿ç´¢å¦‚æžœå­˜åœ¨åˆ™è®©å…¶æŒ‡å‘preï¼Œ preçš„å³çº¿ç´¢å¦‚æžœå­˜åœ¨åˆ™è®©å…¶æŒ‡å‘pï¼Œå› ä¸ºpæ˜¯preçš„åŽç»§ç»“ç‚¹ï¼Œè¿™æ ·å°±å®Œæˆäº†ä¸€å¯¹çº¿ç´¢çš„è¿žæŽ¥
+* ä¿æŒpreå§‹ç»ˆæŒ‡å‘pçš„å‰é©±ç»“ç‚¹çš„è¿‡ç¨‹ï¼šå½“på°†è¦ç¦»å¼€ä¸€ä¸ªè®¿é—®è¿‡çš„ç»“ç‚¹æ—¶ï¼ŒpreæŒ‡å‘pï¼Œå½“pæ¥åˆ°ä¸€ä¸ªæ–°çš„ç»“ç‚¹æ—¶ï¼ŒpreæŒ‡å‘çš„å°±æ˜¯æ­¤æ—¶çš„pçš„å‰é©±ç»“ç‚¹
 */
 
 /*
-* ·ÃÎÊ½áµãpµÄº¯Êý£¬°üº¬¶ÔpµÄ²Ù×÷
+* è®¿é—®ç»“ç‚¹pçš„å‡½æ•°ï¼ŒåŒ…å«å¯¹pçš„æ“ä½œ
 */
 void Visit(TBTNode* p)
 {
 	std::cout << p->data << std::endl;
 }
 
-/*ÖÐÐòÏßË÷»¯,p:µ±Ç°½áµã,pre:Ç°Çý½áµã*/
+/*ä¸­åºçº¿ç´¢åŒ–,p:å½“å‰ç»“ç‚¹,pre:å‰é©±ç»“ç‚¹*/
 void InThread(TBTNode* p, TBTNode*& pre)
 {
 	if (p != NULL)
 	{
-		InThread(p->lchild, pre);								//µÝ¹é ×ó×ÓÊ÷ÏßË÷»¯
+		InThread(p->lchild, pre);								//é€’å½’ å·¦å­æ ‘çº¿ç´¢åŒ–
 		if (p->lchild == NULL)
-		{                                                       //½¨Á¢µ±Ç°½áµãµÄÇ°ÇýÏßË÷
+		{                                                       //å»ºç«‹å½“å‰ç»“ç‚¹çš„å‰é©±çº¿ç´¢
 			p->lchild = pre;
 			p->ltag = 1;
 		}
 		if (pre != NULL && pre->rchild == NULL)
-		{                                                       //½¨Á¢Ç°Çý½áµãµÄºó¼ÌÏßË÷
+		{                                                       //å»ºç«‹å‰é©±ç»“ç‚¹çš„åŽç»§çº¿ç´¢
 			pre->rchild = p;
 			pre->rtag = 1;
 		}
-		pre = p;                                                //pre Ö¸Ïòp£¬×÷Îªp½«ÒªÖ¸ÏòµÄÏÂÒ»¸ö½áµãµÄÇ°Çý½áµã
-		InThread(p->rchild, pre);                               //µÝ¹é ÓÒ×ÓÊ÷ÏßË÷»¯
+		pre = p;                                                //pre æŒ‡å‘pï¼Œä½œä¸ºpå°†è¦æŒ‡å‘çš„ä¸‹ä¸€ä¸ªç»“ç‚¹çš„å‰é©±ç»“ç‚¹
+		InThread(p->rchild, pre);                               //é€’å½’ å³å­æ ‘çº¿ç´¢åŒ–
 	}
 }
 
 /*
-* ÀûÓÃÖÐÐò±éÀú½¨Á¢ÖÐÐòÏßË÷¶þ²æÊ÷
+* åˆ©ç”¨ä¸­åºéåŽ†å»ºç«‹ä¸­åºçº¿ç´¢äºŒå‰æ ‘
 */
 void createInThread(TBTNode* root)
 {
-	TBTNode* pre = NULL;                                        //Ç°Çý½áµãÖ¸Õë
+	TBTNode* pre = NULL;                                        //å‰é©±ç»“ç‚¹æŒ‡é’ˆ
 	if (root != NULL)
 	{
 		InThread(root, pre); 
-		pre->rchild = NULL;                                     //·Ç¿Õ¶þ²æÊ÷ ÏßË÷»¯
-		pre->rtag = 1;                                          //ºó´¦ÀíÖÐÐò×îºóÒ»¸ö½áµã
+		pre->rchild = NULL;                                     //éžç©ºäºŒå‰æ ‘ çº¿ç´¢åŒ–
+		pre->rtag = 1;                                          //åŽå¤„ç†ä¸­åºæœ€åŽä¸€ä¸ªç»“ç‚¹
 	}
 }
 
 /*
-* ±éÀúÖÐÐò¶þ²æÊ÷
-* ÖÐÐò±éÀúÏÂµÄµÚÒ»¸ö½áµã
+* éåŽ†ä¸­åºäºŒå‰æ ‘
+* ä¸­åºéåŽ†ä¸‹çš„ç¬¬ä¸€ä¸ªç»“ç‚¹
 */
 TBTNode* First(TBTNode* p)
 {
 	while (p->ltag == 0)
 		p = p->lchild;
-	return p;	                                                //×î×óÏÂ½áµã
+	return p;	                                                //æœ€å·¦ä¸‹ç»“ç‚¹
 }
 
 /*
-* ÇóÖÐÐòÏßË÷¶þ²æÊ÷ÖÐ£¬½áµãpÔÚÖÐÐòÏÂµÄºó¼ÌÏßË÷µÄËã·¨
+* æ±‚ä¸­åºçº¿ç´¢äºŒå‰æ ‘ä¸­ï¼Œç»“ç‚¹påœ¨ä¸­åºä¸‹çš„åŽç»§çº¿ç´¢çš„ç®—æ³•
 */
 TBTNode *Next(TBTNode *p)
 {
 	if (p->rtag == 0)
 		return First(p->rchild);
 	else
-		return p->lchild;                                       //rtag==1, Ö±½Ó·µ»Øºó¼ÌÏßË÷
+		return p->lchild;                                       //rtag==1, ç›´æŽ¥è¿”å›žåŽç»§çº¿ç´¢
 }
 
 void Inorder(TBTNode* root)
 {
 	for (TBTNode* p = First(root); p != NULL; p = Next(p))
-		Visit(p);                                               //Visit ÊÇ·ÃÎÊ½áµãpµÄº¯Êý
+		Visit(p);                                               //Visit æ˜¯è®¿é—®ç»“ç‚¹pçš„å‡½æ•°
 }
 
 /*
-* ½¨Á¢Ç°ÐòÏßË÷¶þ²æÊ÷µÄËã·¨.
-* ºÍÖÐÐòÏßË÷»¯µÄ´úÂë¼«ÎªÏàËÆ£¬×î´óµÄÇø±ð¾ÍÊÇ°ÑÁ¬½ÓÏßË÷µÄ´úÂëÌáÇ°µ½ÁËÁ½µÝ¹éµÄÈë¿ÚÇ°Ãæ¡£·ûºÏÏÈÐò±éÀúµÄ¿ò¼Ü
+* å»ºç«‹å‰åºçº¿ç´¢äºŒå‰æ ‘çš„ç®—æ³•.
+* å’Œä¸­åºçº¿ç´¢åŒ–çš„ä»£ç æžä¸ºç›¸ä¼¼ï¼Œæœ€å¤§çš„åŒºåˆ«å°±æ˜¯æŠŠè¿žæŽ¥çº¿ç´¢çš„ä»£ç æå‰åˆ°äº†ä¸¤é€’å½’çš„å…¥å£å‰é¢ã€‚ç¬¦åˆå…ˆåºéåŽ†çš„æ¡†æž¶
 */
 void preThread(TBTNode* p, TBTNode*& pre)
 {
@@ -99,7 +99,7 @@ void preThread(TBTNode* p, TBTNode*& pre)
 			pre->rtag = 1;
 		}
 		pre = p;
-		/*×¢Òâ£¬ÕâÀïÔÚµÝ¹éÈë¿Ú´¦ÓÐÏÞÖÆÌõ¼þ£¬×óÓÒÖ¸Õë¶¼²»ÄÜÊÇÏßË÷²ÅÄÜ¼ÌÐøµÝ¹é*/
+		/*æ³¨æ„ï¼Œè¿™é‡Œåœ¨é€’å½’å…¥å£å¤„æœ‰é™åˆ¶æ¡ä»¶ï¼Œå·¦å³æŒ‡é’ˆéƒ½ä¸èƒ½æ˜¯çº¿ç´¢æ‰èƒ½ç»§ç»­é€’å½’*/
 		if (p->ltag == 0)
 			preThread(p->lchild, pre);
 		if (p->rtag == 0)
@@ -108,7 +108,7 @@ void preThread(TBTNode* p, TBTNode*& pre)
 }
 
 /*
-* ÔÚÇ°ÐòÏßË÷¶þ²æÊ÷ÉÏÖ´ÐÐÇ°Ðò±éÀúµÄËã·¨
+* åœ¨å‰åºçº¿ç´¢äºŒå‰æ ‘ä¸Šæ‰§è¡Œå‰åºéåŽ†çš„ç®—æ³•
 */
 void preorder(TBTNode* root)
 {
@@ -117,13 +117,13 @@ void preorder(TBTNode* root)
 		TBTNode* p = root;
 		while (p!=NULL)
 		{
-			while (p->ltag == 0)                                //×óÖ¸Õë²»ÊÇÏßË÷£¬Ôò±ß·ÃÎÊ±ß×óÒÆ
+			while (p->ltag == 0)                                //å·¦æŒ‡é’ˆä¸æ˜¯çº¿ç´¢ï¼Œåˆ™è¾¹è®¿é—®è¾¹å·¦ç§»
 			{
 				Visit(p);
 				p = p->lchild;
 			}
-			Visit(p);                                           //p ´ËÊ±×óÖ¸Õë±ØÎªÏßË÷£¬µ«»¹Ã»ÓÐ±»·ÃÎÊ£¬·ÃÎÊp
-			p = p->rchild;                                      //´ËÊ±p×óº¢×Ó²»´æÔÚ£¬ÔòÓÒÖ¸ÕëÎª¿Õ£¬Èô·Ç¿Õ£¬Ôò²»ÂÛÊÇ·ñÎªÏßË÷¶¼ÊÇÖ¸Ïòºó¼Ì
+			Visit(p);                                           //p æ­¤æ—¶å·¦æŒ‡é’ˆå¿…ä¸ºçº¿ç´¢ï¼Œä½†è¿˜æ²¡æœ‰è¢«è®¿é—®ï¼Œè®¿é—®p
+			p = p->rchild;                                      //æ­¤æ—¶på·¦å­©å­ä¸å­˜åœ¨ï¼Œåˆ™å³æŒ‡é’ˆä¸ºç©ºï¼Œè‹¥éžç©ºï¼Œåˆ™ä¸è®ºæ˜¯å¦ä¸ºçº¿ç´¢éƒ½æ˜¯æŒ‡å‘åŽç»§
 		}
 	}
 }

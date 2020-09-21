@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #define maxSize 100
 typedef struct VertexType{

@@ -1,7 +1,7 @@
-#pragma once
+ï»¿#pragma once
 typedef struct BTNode
 {
-	char data;//½áµãµÄdataÓò£¬Ä¬ÈÏÎªcharĞÍ
+	char data;//ç»“ç‚¹çš„dataåŸŸï¼Œé»˜è®¤ä¸ºcharå‹
 	struct BTNode* lchild;
 	struct BTNode* rchild;
 };

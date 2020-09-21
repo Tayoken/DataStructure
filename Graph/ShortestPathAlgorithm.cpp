@@ -1,15 +1,15 @@
-#include "MGraph.h"
+ï»¿#include "MGraph.h"
 #include <iostream>
 
 #define INF 9999
 
-/*Í¼-×î¶ÌÂ·¾¶Ëã·¨*/
-/*1 µÏ½ÜË¹ÌØÀ­Ëã·¨*/
+/*å›¾-æœ€çŸ­è·¯å¾„ç®—æ³•*/
+/*1 è¿ªæ°æ–¯ç‰¹æ‹‰ç®—æ³•*/
 void Dijkstra(MGraph g, int v, int dist[], int path[])
 {
 	int set[maxSize];
 	int min, j, u, i;
-	/*³õÊ¼»¯*/
+	/*åˆå§‹åŒ–*/
 	for (i = 0; i < g.n; i++)
 	{
 		dist[i] = g.edges[v][i];
@@ -21,8 +21,8 @@ void Dijkstra(MGraph g, int v, int dist[], int path[])
 	}
 	set[v] = 1;
 	path[v] = -1;
-	/*³õÊ¼»¯½áÊø*/
-	/*¹Ø¼ü²Ù×÷¿ªÊ¼*/
+	/*åˆå§‹åŒ–ç»“æŸ*/
+	/*å…³é”®æ“ä½œå¼€å§‹*/
 	for (i = 0; i < g.n; i++)
 	{
 		min = INF;
@@ -35,7 +35,7 @@ void Dijkstra(MGraph g, int v, int dist[], int path[])
 		set[u] = 1;
 		for (j = 0; j < g.n; j++)
 		{
-			/*Õâ¸öifÅĞ¶Ï¶¥µãuµÄ¼ÓÈëÊÇ·ñ»áËõ¶Ìµ½jµÄÂ·¾¶£¬Èç¹ûÊÇ£¬ĞŞ¸ÄÂ·¾¶ºÍ³¤¶È£¬·ñÔòÊ²Ã´¶¼²»×ö*/
+			/*è¿™ä¸ªifåˆ¤æ–­é¡¶ç‚¹uçš„åŠ å…¥æ˜¯å¦ä¼šç¼©çŸ­åˆ°jçš„è·¯å¾„ï¼Œå¦‚æœæ˜¯ï¼Œä¿®æ”¹è·¯å¾„å’Œé•¿åº¦ï¼Œå¦åˆ™ä»€ä¹ˆéƒ½ä¸åš*/
 			if (set[j] == 0 && dist[u] + g.edges[u][j] < dist[j])
 			{
 				dist[j] = dist[u] + g.edges[u][j];
@@ -45,13 +45,13 @@ void Dijkstra(MGraph g, int v, int dist[], int path[])
 
 	}
 }
-/*º¯Êı½áÊøÊ±dist[]·ÅµÄÊÇvµ½ÆäÓà¶¥µãµÄ×î¶ÌÂ·¾¶³¤¶È*£¬path[]·ÅµÄÊÇvµ½ÆäÓàµãµÄ×î¶ÌÂ·¾¶*/
+/*å‡½æ•°ç»“æŸæ—¶dist[]æ”¾çš„æ˜¯våˆ°å…¶ä½™é¡¶ç‚¹çš„æœ€çŸ­è·¯å¾„é•¿åº¦*ï¼Œpath[]æ”¾çš„æ˜¯våˆ°å…¶ä½™ç‚¹çš„æœ€çŸ­è·¯å¾„*/
 
-//Êä³öµÏ½ÜË¹ÌØÀ­Ëã·¨µÄÂ·¾¶
+//è¾“å‡ºè¿ªæ°æ–¯ç‰¹æ‹‰ç®—æ³•çš„è·¯å¾„
 void printDijkstraPath(int path[], int a)
 {
 	int stack[maxSize], top = -1;
-	/*Õâ¸öÑ­»·ÓÉÒ¶×Ó½áµãµ½¸ù½ÚµãÈëÕ»*/
+	/*è¿™ä¸ªå¾ªç¯ç”±å¶å­ç»“ç‚¹åˆ°æ ¹èŠ‚ç‚¹å…¥æ ˆ*/
 	while (path[a] != -1)
 	{
 		stack[++top] = a;
@@ -67,7 +67,7 @@ void printDijkstraPath(int path[], int a)
 
 
 
-/*2 ¸¥ÂåÒÁµÂËã·¨*/
+/*2 å¼—æ´›ä¼Šå¾·ç®—æ³•*/
 void Floyd(MGraph g, int Path[][maxSize], int A[][maxSize])
 {
 	int i, j, k;
@@ -78,7 +78,7 @@ void Floyd(MGraph g, int Path[][maxSize], int A[][maxSize])
 			Path[i][j] = -1;
 		}
 
-	/*ÏÂÃæÕâÈı²ãÑ­»·ÊÇ±¾Ëã·¨µÄÖ÷Òª²Ù×÷£¬Íê³ÉÁËÒÔkÎªÖĞ¼ä¶¥µã¶ÔËùÓĞµÄ¶¥µã¶Ô(i,j)½øĞĞ¼ì²âºÍĞŞ¸Ä*/
+	/*ä¸‹é¢è¿™ä¸‰å±‚å¾ªç¯æ˜¯æœ¬ç®—æ³•çš„ä¸»è¦æ“ä½œï¼Œå®Œæˆäº†ä»¥kä¸ºä¸­é—´é¡¶ç‚¹å¯¹æ‰€æœ‰çš„é¡¶ç‚¹å¯¹(i,j)è¿›è¡Œæ£€æµ‹å’Œä¿®æ”¹*/
 	for (k = 0; k < g.n; k++)
 		for (i = 0; i < g.n; i++)
 			for (j = 0; j < g.n; j++)
@@ -89,18 +89,18 @@ void Floyd(MGraph g, int Path[][maxSize], int A[][maxSize])
 				}
 }
 
-/*Êä³ö´Óuµ½vµÄ×î¶ÌÂ·¾¶ÉÏµÄ¶¥µãĞòÁĞ*/
+/*è¾“å‡ºä»uåˆ°vçš„æœ€çŸ­è·¯å¾„ä¸Šçš„é¡¶ç‚¹åºåˆ—*/
 void printFloydPath(int u, int v, int path[][maxSize], int A[][maxSize)
 {
 	if (A[u][v] == INF)
 	{
-		//A[u][v] = INF±íÊ¾Ã»ÓĞÂ·¾¶
+		//A[u][v] = INFè¡¨ç¤ºæ²¡æœ‰è·¯å¾„
 	}
 	else
 	{
 		if(path[u][v] == -1)
 		{
-			//Ö±½ÓÊä³ö<u,v>
+			//ç›´æ¥è¾“å‡º<u,v>
 		}
 		else
 		{

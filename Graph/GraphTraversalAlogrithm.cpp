@@ -1,11 +1,11 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include "AGraph.h"
 #define maxSize 100
 using namespace std;
 
 int visit[maxSize];
 
-/*Í¼-Éî¶ÈÓÅÏÈËÑË÷±éÀú+¹ã¶ÈÓÅÏÈËÑË÷±éÀú*/
+/*å›¾-æ·±åº¦ä¼˜å…ˆæœç´¢éå†+å¹¿åº¦ä¼˜å…ˆæœç´¢éå†*/
 void DFS(AGraph* G, int v) {
 	ArcNode* p;
 	visit[v] = 1;
@@ -19,7 +19,7 @@ void DFS(AGraph* G, int v) {
 	}
 }
 
-//visit Êı×é³õÊ¼»¯Îª0
+//visit æ•°ç»„åˆå§‹åŒ–ä¸º0
 void BFS(AGraph* G, int v, int visit[maxSize]) {
 	ArcNode* p;
 	int que[maxSize], front = 0, rear = 0;
