@@ -1,7 +1,7 @@
 #pragma once
 #define maxSize 9999
 
-/*长度可以变化的字符串*/
+/*闀垮害鍙互鍙樺寲鐨勫瓧绗︿覆*/
 typedef struct Str
 {
 	char* ch;

@@ -1,7 +1,7 @@
 #include <iostream>
 #include "VeriableString.h"
 
-/*×Ö·û´®¸³Öµ²Ù×÷*/
+/*å­—ç¬¦ä¸²èµ‹å€¼æ“ä½œ*/
 int strassign(Str& str, char* ch)
 {
 	if (str.ch)
@@ -21,7 +21,7 @@ int strassign(Str& str, char* ch)
 	}
 	else
 	{
-		str.ch = (char*)malloc(sizeof(char) * (len + 1));                                   //È¡len+1ÊÇÎªÁË¶à·ÖÅäÒ»¸ö¿Õ¼ä´æ·Å'\0'×Ö·û
+		str.ch = (char*)malloc(sizeof(char) * (len + 1));                                   //å–len+1æ˜¯ä¸ºäº†å¤šåˆ†é…ä¸€ä¸ªç©ºé—´å­˜æ”¾'\0'å­—ç¬¦
 		if (str.ch == NULL)
 			return 0;
 		else
@@ -29,7 +29,7 @@ int strassign(Str& str, char* ch)
 			c = ch;
 			for (int i = 0; i <= len; i++)
 				str.ch[i] = *c;
-			/*Ñ­»·Ìõ¼şÓÃ<=ÊÇÎªÁË°Ñ'\0'¸´ÖÆ½øÈ¥*/
+			/*å¾ªç¯æ¡ä»¶ç”¨<=æ˜¯ä¸ºäº†æŠŠ'\0'å¤åˆ¶è¿›å»*/
 			str.length = len;
 			return 1;
 		}
@@ -37,16 +37,16 @@ int strassign(Str& str, char* ch)
 
 }
 
-/*È¡´®³¤¶È²Ù×÷*/
+/*å–ä¸²é•¿åº¦æ“ä½œ*/
 int strlength(Str str)
 {
 	return str.length;
 }
 
-/*´®±È½Ï²Ù×÷*/
+/*ä¸²æ¯”è¾ƒæ“ä½œ*/
 /*
-* ¹æÔò£ºÉè×Ö·û´®AºÍB£¬´ı±È½Ï×Ö·ûÎªaºÍb£¬Èç¹ûaµÄASCIIÂëĞ¡ÓÚbµÄ£¬Ôò·µ»ØAĞ¡ÓÚB±ê¼Ç£»´óÓÚÔò·µ»ØA´óÓÚB±ê¼Ç£»Èç¹ûÏàµÈ£¬¼ÌĞø°´ÒÔÉÏ¹æÔò±È½ÏÏÂÒ»Î»µÄ×Ö·û¡£
-* ÏÈ½áÊøµÄÎª½ÏĞ¡´®¡£
+* è§„åˆ™ï¼šè®¾å­—ç¬¦ä¸²Aå’ŒBï¼Œå¾…æ¯”è¾ƒå­—ç¬¦ä¸ºaå’Œbï¼Œå¦‚æœaçš„ASCIIç å°äºbçš„ï¼Œåˆ™è¿”å›Aå°äºBæ ‡è®°ï¼›å¤§äºåˆ™è¿”å›Aå¤§äºBæ ‡è®°ï¼›å¦‚æœç›¸ç­‰ï¼Œç»§ç»­æŒ‰ä»¥ä¸Šè§„åˆ™æ¯”è¾ƒä¸‹ä¸€ä½çš„å­—ç¬¦ã€‚
+* å…ˆç»“æŸçš„ä¸ºè¾ƒå°ä¸²ã€‚
 */
 int strcompare(Str s1, Str s2)
 {
@@ -56,19 +56,19 @@ int strcompare(Str s1, Str s2)
 	return s1.length - s2.length;
 }
 
-/*´®Á¬½Ó²Ù×÷*/
-/*½«Á½¸ö´®Ê×Î²ÏàÁ¬£¬ºÏ²¢³ÉÒ»¸ö×Ö·û´®µÄ²Ù×÷*/
+/*ä¸²è¿æ¥æ“ä½œ*/
+/*å°†ä¸¤ä¸ªä¸²é¦–å°¾ç›¸è¿ï¼Œåˆå¹¶æˆä¸€ä¸ªå­—ç¬¦ä¸²çš„æ“ä½œ*/
 int concat(Str& str, Str str1, Str str2)
 {
-	if (str.ch)                                                                             //ÊÍ·ÅÔ­´®¿Õ¼ä
+	if (str.ch)                                                                             //é‡Šæ”¾åŸä¸²ç©ºé—´
 	{
 		free(str.ch);
 		str.ch = NULL;
 	}
-	str.ch = (char*)malloc(sizeof(char) * (str1.length + str2.length + 1));					//×¢Òâ¶àÉêÇëÒ»Î»¿Õ¼ä·Å'\0'
-	if (str.ch == NULL)                                                                     //ÉêÇë¿Õ¼äÊ§°Ü
+	str.ch = (char*)malloc(sizeof(char) * (str1.length + str2.length + 1));					//æ³¨æ„å¤šç”³è¯·ä¸€ä½ç©ºé—´æ”¾'\0'
+	if (str.ch == NULL)                                                                     //ç”³è¯·ç©ºé—´å¤±è´¥
 		return 0;
-	/*ÏÂÃæÁ½¸öÑ­»·°ÑÁ½¸ö´®¸³Öµµ½ĞÂ´®*/
+	/*ä¸‹é¢ä¸¤ä¸ªå¾ªç¯æŠŠä¸¤ä¸ªä¸²èµ‹å€¼åˆ°æ–°ä¸²*/
 	int i = 0;
 	while (i<str1.length)
 	{
@@ -76,27 +76,27 @@ int concat(Str& str, Str str1, Str str2)
 		i++;
 	}
 	int j = 0;
-	while (j <= str2.length)                                                                //Ê¹ÓÃ<=ºÅÊÇÎªÁË°Ñ'\0'¸´ÖÆ½øÈ¥
+	while (j <= str2.length)                                                                //ä½¿ç”¨<=å·æ˜¯ä¸ºäº†æŠŠ'\0'å¤åˆ¶è¿›å»
 	{
 		str.ch[i + j] = str2.ch[j];                                                         //Warning C6386
 		j++;
 	}
-	str.length = str1.length + str2.length;                                                 //Éè¶¨ĞÂ´®³¤¶È
+	str.length = str1.length + str2.length;                                                 //è®¾å®šæ–°ä¸²é•¿åº¦
 	return 1;
 }
 
-/*Çó×Ó´®²Ù×÷*/
-/*ÊµÏÖÇóstr´®ÖĞ´ÓposÎ»ÖÃ¿ªÊ¼£¬³¤¶ÈÎªlenµÄ×Ó´®£¬ÓÉsubstr·µ»Ø*/
+/*æ±‚å­ä¸²æ“ä½œ*/
+/*å®ç°æ±‚strä¸²ä¸­ä»posä½ç½®å¼€å§‹ï¼Œé•¿åº¦ä¸ºlençš„å­ä¸²ï¼Œç”±substrè¿”å›*/
 int substring(Str& substr, Str str, int pos, int len)
 {
-	if (pos < 0 || pos >= str.length || len < 0 || len > str.length - pos)                  //·Ç·¨ÊäÈëÅĞ¶Ï
+	if (pos < 0 || pos >= str.length || len < 0 || len > str.length - pos)                  //éæ³•è¾“å…¥åˆ¤æ–­
 		return 0;
 	if (substr.ch)
 	{
 		free(substr.ch);
 		substr.ch = NULL;
 	}
-	if (len == 0)                                                                           //Çó×Ó´®Îª¿Õ´®
+	if (len == 0)                                                                           //æ±‚å­ä¸²ä¸ºç©ºä¸²
 	{
 		substr.ch = NULL;
 		substr.length = 0;
@@ -104,7 +104,7 @@ int substring(Str& substr, Str str, int pos, int len)
 	}
 	else
 	{
-		substr.ch = (char*)malloc(sizeof(char) * (len + 1));                                //ÉêÇëlen+1¸ö¿Õ¼ä
+		substr.ch = (char*)malloc(sizeof(char) * (len + 1));                                //ç”³è¯·len+1ä¸ªç©ºé—´
 		if (substr.ch == NULL)
 			return 0;
 
@@ -122,7 +122,7 @@ int substring(Str& substr, Str str, int pos, int len)
 	}
 }
 
-/*Çå¿Õ´®²Ù×÷*/
+/*æ¸…ç©ºä¸²æ“ä½œ*/
 int clearstring(Str& str)
 {
 	if (str.ch)

@@ -1,6 +1,6 @@
 #pragma once
 #define maxSize 9999
-/*长度有限的字符串*/
+/*闀垮害鏈夐檺鐨勫瓧绗︿覆*/
 typedef struct Str
 {
 	char str[maxSize];
