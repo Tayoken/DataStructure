@@ -145,9 +145,16 @@
     <ClCompile Include="BubbleSort.cpp" />
     <ClCompile Include="InsertionSort.cpp" />
     <ClCompile Include="MergeSort.cpp" />
+    <ClCompile Include="QuickSort.cpp" />
     <ClCompile Include="SelectionSort.cpp" />
     <ClCompile Include="ShellSort.cpp" />
     <ClCompile Include="swap.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="排序对比.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="sort.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -26,9 +26,10 @@ void shell_sort(int arr[], int len)
 		gap = 3 * gap + 1;
 	while (gap >= 1) {	
 		for (int i = gap; i < len; i++)
-			for (int j = i; j >= gap && arr[j - gap] > arr[j]; j-=gap)
+			for (int j = i; j >= gap && arr[j - gap] > arr[j]; j-=gap)//每次对比的时候都是间隔gap，有相同间隔的算一组
 				swap(arr[j], arr[j - gap]);
 		gap = gap / 3;
 	}
 }
 
+/*希尔排序算法复杂度分析很复杂，目前最好为O(n^1,3),和间隔有关*/
